@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $books = [
+        'Harry Potter',
+        'Laraval'
+    ];
+    return view('welcome', [
+        'books' => $books
+    ]);
 });
 
 Route::get('hello',function () {
