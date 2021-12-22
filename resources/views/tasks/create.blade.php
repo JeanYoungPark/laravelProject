@@ -5,6 +5,7 @@
 @section('content')
     <h1 class="font-bold text-3xl">Create Task</h1>
     <form action="/tasks" method="post">
+        @csrf
         <label class="block" for="title">Title</label>
         <input class="border border-gray-800" type="text" name="title" id="title">
         <br>
