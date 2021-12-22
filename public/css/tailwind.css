@@ -479,6 +479,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-2 {
   padding: 0.5rem;
 }
+.p-3 {
+  padding: 0.75rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -486,6 +489,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-64 {
   padding-left: 16rem;
   padding-right: 16rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .text-xl {
   font-size: 1.25rem;

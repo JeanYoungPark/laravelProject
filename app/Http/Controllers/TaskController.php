@@ -21,12 +21,17 @@ class TaskController extends Controller
 
     public function store(Request $request){
         
-        Task::create([
+        $tast = Task::create([
             'title' => $request->input('title'),
             'body' => $request->input('body')
         ]);
 
-        return redirect('/tasks');
+        return redirect('/tasks/'.$tast->id);
     }
 
+    public function show(Task $task) {
+        return view('tasks.show', [
+            'task' => $task
+        ]);
+    }
 }
