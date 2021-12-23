@@ -7,7 +7,8 @@ use App\Models\task;
 
 class TaskController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tasks = Task::all();
 
         return view('tasks.index', [
@@ -15,12 +16,13 @@ class TaskController extends Controller
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('tasks.create');
     }
 
-    public function store(Request $request){
-        
+    public function store(Request $request)
+    {
         $tast = Task::create([
             'title' => $request->input('title'),
             'body' => $request->input('body')
@@ -29,9 +31,26 @@ class TaskController extends Controller
         return redirect('/tasks/'.$tast->id);
     }
 
-    public function show(Task $task) {
+    public function show(Task $task)
+    {
         return view('tasks.show', [
             'task' => $task
         ]);
+    }
+
+    public function edit(Task $task)
+    {
+        return view('tasks.edit', [
+            'task' => $task
+        ]);
+    }
+
+    public function update(Task $task)
+    {
+        $task->update([
+            'title' => request('title'),
+            'body' => request('body')
+        ]);
+        return redirect('/tasks/'.$task->id);
     }
 }
