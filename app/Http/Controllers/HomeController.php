@@ -7,13 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-        $books = [
-            'Harry Potter',
-            'Laraval'
-        ];
-        return view('welcome', [
-            'books' => $books
-        ]);
+        return view('home');
     }
 
     public function hello(){
