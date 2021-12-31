@@ -9,7 +9,8 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::latest()->where('user_id', auth()->id())->get();
+        $tasks = auth()->user()->tasks()->latest()->get();
+        // Task::latest()->where('user_id', auth()->id())->get();
 
         return view('tasks.index', [
             'tasks' => $tasks
